@@ -1,10 +1,10 @@
 # Site settings
 title: Yu Blog
 SEOTitle: 雨的博客 | Yu Blog
-header-img: img/home-bg.jpg
+header-img: img/home-bg/home-bg-04.jpg
 email: 15968199093@163.com
 description: "关于Python 爬虫 机器学习 数据挖掘 一个数据科学的小白随便写点东西的地方。"
-url: "https://lguduy.github.io/"              # your host, for absolute URL
+url: "https://lguduy.github.io/"        # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
@@ -61,9 +61,9 @@ ba_track_id: 9cc7b76efd4b490f6cae132cbf618198
 
 
 # Sidebar settings
-sidebar: true                           # whether or not using Sidebar.
+sidebar: False                           # whether or not using Sidebar.
 sidebar-about-description: "随便写点东西记录学习和生活。"
-sidebar-avatar: /img/Sidebar-photo.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/Sidebar-photo/Sidebar-photo-01.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 

@@ -1,2 +1,2 @@
-# lguduy.github.io
-Personal blog
+# 雨的博客 | Yu Blog
+
