@@ -61,7 +61,7 @@ ba_track_id: 9cc7b76efd4b490f6cae132cbf618198
 
 
 # Sidebar settings
-sidebar: False                           # whether or not using Sidebar.
+sidebar: True                                                # whether or not using Sidebar.
 sidebar-about-description: "随便写点东西记录学习和生活。"
 sidebar-avatar: /img/Sidebar-photo/Sidebar-photo-01.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
