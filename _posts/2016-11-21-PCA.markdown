@@ -52,7 +52,6 @@ tags:
 ### 内积
 
 向量A和B的内积公式为：
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
 $$A\cdot B=|A||B|cos(a)$$
 
 A与B的内积等于A到B的投影长度乘以B的模。再进一步，如果我们假设B的模为1，即让|B|=1，那么就变成了：
