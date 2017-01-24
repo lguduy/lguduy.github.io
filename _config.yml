@@ -2,10 +2,11 @@
 title: Yu Blog
 SEOTitle: 雨的博客 | Yu Blog
 header-img: img/home-bg/home-bg-04.jpg
-email: 15968199093@163.com
-description: "关于Python 爬虫 机器学习 数据挖掘 一个数据科学的小白随便写点东西的地方。"
+email: 2111502112@zjut.edu.cn
+description: "关于Python 爬虫 机器学习 数据挖掘 一个数据科学小白记录学习和生活的地方。"
+keyword: "梁雨, lguduy, 博客, Python, 爬虫, 机器学习, 数据挖掘, 互联网"
 url: "https://lguduy.github.io/"        # your host, for absolute URL
-baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: "https://lguduy.github.io/blog"                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
@@ -14,6 +15,7 @@ RSS: false
 weibo_username:     209093027
 zhihu_username:     liangyu92
 github_username:    lguduy
+cloud: http://music.163.com/#/user/home?id=126756409
 
 
 
@@ -51,7 +53,7 @@ duoshuo_share: True                   # set to false if you want to use Comment 
 
 
 # Analytics settings
-# Baidu Analytics 
+# Baidu Analytics
 ba_track_id: 9cc7b76efd4b490f6cae132cbf618198
 
 # Google Analytics
@@ -62,7 +64,7 @@ ba_track_id: 9cc7b76efd4b490f6cae132cbf618198
 
 # Sidebar settings
 sidebar: True                                                # whether or not using Sidebar.
-sidebar-about-description: "随便写点东西记录学习和生活。"
+sidebar-about-description: "记录学习和生活。"
 sidebar-avatar: /img/Sidebar-photo/Sidebar-photo-03.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -84,5 +86,11 @@ friends: [
     {
         title: "Hux",
         href: "https://huangxuan.me/"
+    },{
+        title: "我爱机器学习",
+        href: "https://www.52ml.net/"
+    },{
+        title: "DataCastle",
+        href: "http://www.pkbigdata.com/"
     }
 ]
