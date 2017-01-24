@@ -2,10 +2,6 @@
 layout: default
 ---
 
-<!-- Image to hack wechat -->
-<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
-
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
@@ -62,7 +58,7 @@ layout: default
 
                 <hr style="visibility: hidden;">
 
-                {% if site.duoshuo_share && site.duoshuo_username %}
+                {% if site.duoshuo_share and site.duoshuo_username %}
                 <!-- 多说 Share start -->
                 <div class="ds-share"
                     style="text-align: right"
@@ -140,30 +136,6 @@ layout: default
             </div>
         {% endif %}
 
-    <!-- Sidebar Container -->
-            <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
-                <!-- Featured Tags -->
-                {% if site.featured-tags %}
-                <section>
-                    <hr class="hidden-sm hidden-xs">
-                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
-                    <div class="tags">
-        				{% for tag in site.tags %}
-                            {% if tag[1].size > {{site.featured-condition-size}} %}
-                				<a href="/tags/#{{ tag[0] }}" title="{{ tag[0] }}" rel="{{ tag[1].size }}">
-                                    {{ tag[0] }}
-                                </a>
-                            {% endif %}
-        				{% endfor %}
-        			</div>
-                </section>
-                {% endif %}
-
-            </div>
         </div>
     </div>
 </article>
@@ -176,10 +148,11 @@ layout: default
     var _user = '{{site.duoshuo_username}}';
 
     // duoshuo comment query.
-    var duoshuoQuery = {short_name: _user };
+    var duoshuoQuery = {short_name: "lguduy"};
     (function() {
         var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
+        ds.type = 'text/javascript';
+        ds.async = true;
         ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
         ds.charset = 'UTF-8';
         (document.getElementsByTagName('head')[0]
@@ -226,13 +199,10 @@ layout: default
         }
     }
 </style>
-<<<<<<< HEAD
-{% endif %}
-=======
-
 {% endif %}
 
-<!-- 添加mathjax公式支持 -->
+
+<!-- 添加 mathjax 公式支持 -->
 <script>
   (function () {
     var script = document.createElement("script");
@@ -241,4 +211,3 @@ layout: default
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>
->>>>>>> e96724854974a16f221ec66cbbc0913bee2a0e2b
