@@ -5,10 +5,31 @@ date:       2016-11-21 21:30:00
 author:     "liangyu"
 header-img: "img/pexels-photo-134679.jpeg"
 tags:
-    - Machine Learning 
+    - Machine Learning
 ---
 
 > 每天进步一点点。
+
+
+<!-- toc orderedList:0 depthFrom:1 depthTo:6 -->
+
+- [前言](#前言)
+- [正文](#正文)
+	- [基本概念](#基本概念)
+	- [PCA介绍](#pca介绍)
+	- [PCA数学理论](#pca数学理论)
+		- [基](#基)
+		- [内积](#内积)
+		- [基变换的矩阵表示](#基变换的矩阵表示)
+		- [优化目标](#优化目标)
+		- [协方差矩阵](#协方差矩阵)
+		- [PCA具体算法步骤](#pca具体算法步骤)
+	- [Scikit-learn PCA实例分析](#scikit-learn-pca实例分析)
+	- [实现PCA算法](#实现pca算法)
+- [后记](#后记)
+
+<!-- tocstop -->
+
 
 # 前言
 
@@ -177,10 +198,10 @@ class PCA(object):
     def __init__(self, x, n_components=None):
         self.x = x
         self.dimension = x.shape[1]
-        
+
         if n_components and n_components >= self.dimension:
             raise DimensionValueError("n_components error")
-            
+
         self.n_components = n_components
 ```
 
@@ -192,7 +213,7 @@ class PCA(object):
         x_T = np.transpose(self.x)                           #矩阵转置
         x_cov = np.cov(x_T)                                  #协方差矩阵
         return x_cov
-    
+
     def get_feature(self):
         """求协方差矩阵C的特征值和特征向量"""
         x_cov = self.cov()
@@ -211,21 +232,21 @@ class PCA(object):
         """指定维度降维和根据方差贡献率自动降维"""
         c_df_sort = self.get_feature()
         varience = self.explained_varience_()
-        
+
         if self.n_components:                                #指定降维维度
             p = c_df_sort.values[0:self.n_components, 1:]
             y = np.dot(p, np.transpose(self.x))              
             return np.transpose(y)
-        
+
         varience_sum = sum(varience)                         
         varience_radio = varience / varience_sum
-        
+
         varience_contribution = 0
         for R in xrange(self.dimension):
             varience_contribution += varience_radio[R]       
             if varience_contribution >= 0.99:
                 break
-            
+
         p = c_df_sort.values[0:R+1, 1:]                      #取前R个特征向量
         y = np.dot(p, np.transpose(self.x))                  
         return np.transpose(y)
@@ -244,52 +265,3 @@ class PCA(object):
 ***
 
 本作品采用<a rel="license" href="http://creativecommons.org/licenses/by/3.0/cn/">知识共享署名 3.0 中国大陆许可协议</a>进行许可。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
