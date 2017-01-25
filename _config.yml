@@ -6,7 +6,7 @@ email: 2111502112@zjut.edu.cn
 description: "关于Python 爬虫 机器学习 数据挖掘 一个数据科学小白记录学习和生活的地方。"
 keyword: "梁雨, lguduy, 博客, Python, 爬虫, 机器学习, 数据挖掘, 互联网"
 url: "https://lguduy.github.io/"        # your host, for absolute URL
-baseurl: "https://lguduy.github.io/blog"                             # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
@@ -65,7 +65,7 @@ ba_track_id: 9cc7b76efd4b490f6cae132cbf618198
 # Sidebar settings
 sidebar: True                                                # whether or not using Sidebar.
 sidebar-about-description: "记录学习和生活。"
-sidebar-avatar: /img/Sidebar-photo/Sidebar-photo-03.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/Sidebar-photo/Sidebar-photo-04.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
