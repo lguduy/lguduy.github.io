@@ -8,6 +8,22 @@ tags:
     - 折腾
 ---
 
+
+<!-- @import "[TOC]" {cmd:"toc", depthFrom:1, depthTo:6, orderedList:false} -->
+
+<!-- code_chunk_output -->
+
+* [前言](#前言)
+* [正文](#正文)
+	* [操作系统](#操作系统)
+	* [Ruby 相关环境](#ruby-相关环境)
+	* [安装 Jekyll](#安装-jekyll)
+	* [Github Pages](#github-pages)
+* [后记](#后记)
+
+<!-- /code_chunk_output -->
+
+
 # 前言
 
 原来搭建个人博客的时候并没有一步一步记录下来，前几天电脑坏了，重装了系统，导致很多环境要重新搭，这次就把搭建 Jekyll + Githun pages 环境的过程一步一步记录下来，省的以后再重装系统再踩一遍坑.
@@ -122,7 +138,7 @@ $ gem install jekyll-paginate
 
 修改好后，就可以推送到远程，前一部分相当于线下调试，这部分就相当于上线。
 
-## 后记
+# 后记
 
 写博客还真是费时间啊，半天时间又过去了，文字功底太渣了。
 
