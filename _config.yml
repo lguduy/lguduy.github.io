@@ -9,14 +9,12 @@ url: "https://lguduy.github.io/"        # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
-
 # SNS settings
 RSS: false
 weibo_username:     209093027
 zhihu_username:     liangyu92
 github_username:    lguduy
 cloud: http://music.163.com/#/user/home?id=126756409
-
 
 
 # Build settings
@@ -43,15 +41,6 @@ kramdown:
 input: GFM                            # use Github Flavored Markdown !important
 
 
-
-# Duoshuo settings
-duoshuo_username: Yublog
-# Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: True                   # set to false if you want to use Comment without Sharing
-
-
-
-
 # Analytics settings
 # Baidu Analytics
 ba_track_id: 9cc7b76efd4b490f6cae132cbf618198
@@ -74,11 +63,9 @@ featured-tags: true                     # whether or not using Feature-Tags
 featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
 
 
-
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
 service-worker: true
-
 
 
 # Friends
