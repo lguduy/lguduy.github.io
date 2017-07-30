@@ -168,7 +168,7 @@ plt.show()
 
 pca.explained_variance_ 就是上面协方差矩阵D的对角线元素，如下图所示：
 
-![fig01](/img/post-bg/fig1.png)
+![fig-01](/img/post-bg/fig1.png)
 
 ***
 
