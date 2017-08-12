@@ -3,16 +3,16 @@ layout:     post
 title:      "TensorFlow教程：利用TensorFlow处理自己的数据"
 date:       2017-5-20 09:30:00
 author:     "liangyu"
-header-img: "img/1501227683115.jpg"
+header-img: "img/Through a Glass Darkly.jpg"
 tags:
-    - 深度学习
-		- 机器学习
-		- TensorFlow
+    - Deep Learning
+    - TensorFlow
 ---
 
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 <!-- code_chunk_output -->
 
+* [前言](#前言)
 * [整理数据](#整理数据)
 * [Split data](#split-data)
 * [写入TFRecords文件](#写入tfrecords文件)
@@ -23,6 +23,7 @@ tags:
 	* [tf.train.start_queue_runners](#tftrainstart_queue_runners)
 	* [官方推荐模板](#官方推荐模板)
 * [测试](#测试)
+* [后记](#后记)
 
 <!-- /code_chunk_output -->
 
