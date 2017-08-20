@@ -43,7 +43,7 @@ tags:
 
 获得所有图片的 **绝对路径列表**，然后按照一定比例分成三部分，这是网络的输入，而绝对路径中含有标签信息，把标签提取出来放在对应路径后面。
 
-```Python
+```python
 def getDatafile(file_dir, train_size, val_size):
     """Get list of train, val, test image path and label
 
@@ -112,7 +112,7 @@ def getDatafile(file_dir, train_size, val_size):
 TFRecords是标准TensorFlow格式，这种方法可以使TensorFlow的数据集更容易与网络应用架构相匹配，
 这是官方推荐一种数据格式，当然要用它了。
 
-```Python
+```python
 def _int64_feature(value):
     """Wrapper for inserting int64 features into Example proto."""
     if not isinstance(value, list):
@@ -131,7 +131,7 @@ TFRecords文件包含了tf.train.Example 协议内存块(protocol buffer)
 将数据填入到Example协议内存块(protocol buffer)，将协议内存块序列化为一个字符串，
 并且通过tf.python_io.TFRecordWriter class写入到TFRecords文件。
 
-```Python
+```python
 def convert_to_TFRecord(images, labels, save_dir, name):
     """Convert images and labels to TFRecord file.
     Parameters:
