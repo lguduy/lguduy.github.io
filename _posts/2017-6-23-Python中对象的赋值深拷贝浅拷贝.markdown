@@ -1,0 +1,292 @@
+---
+layout:     post
+title:      "Python中对象的赋值浅拷贝深拷贝"
+date:       2017-6-23 21:30:00
+author:     "liangyu"
+header-img: "img/Sunset.jpg"
+tags:
+    - Python
+---
+
+## 赋值
+
+```python
+a = ['hello', 28, ['Python', 'Java', 'JS']]
+print a
+print id(a)
+print [id(x) for x in a]
+
+b = a
+print b
+print id(b)
+print [id(x) for x in b]
+```
+
+    ['hello', 28, ['Python', 'Java', 'JS']]
+    140093550830080
+    [140093513003296, 16961264, 140093551425872]
+    ['hello', 28, ['Python', 'Java', 'JS']]
+    140093550830080
+    [140093513003296, 16961264, 140093551425872]
+
+
+修改a中的元素，其中str和int是Python中不可变对象，需要开辟新的空间；list是可变对象，不需要开辟新的空间。
+
+
+```python
+a[0], a[1] = 'world', 30
+a[2].append('R')
+
+print a
+print id(a)
+print [id(x) for x in a]
+
+print b
+print id(b)
+print [id(x) for x in b]
+```
+
+    ['world', 30, ['Python', 'Java', 'JS', 'R']]
+    140093550830080
+    [140093381307968, 16961216, 140093551425872]
+    ['world', 30, ['Python', 'Java', 'JS', 'R']]
+    140093550830080
+    [140093381307968, 16961216, 140093551425872]
+
+
+### 小结
+
+1. 赋值是将一个对象的**地址**赋值给一个变量，让变量指向该地址（ 旧瓶装旧酒 ）；
+2. 修改不可变对象（str、tuple）需要开辟新的空间，就有新的地址；
+3. 修改可变对象（list等）不需要开辟新的空间。
+
+## 浅拷贝
+
+```python
+a = ['hello', 28, ['Python', 'Java', 'JS']]
+print a
+print id(a)
+print [id(x) for x in a]
+
+# 切片是浅拷贝
+b = a[:]
+print b
+print id(b)
+print [id(x) for x in b]
+```
+
+    ['hello', 28, ['Python', 'Java', 'JS']]
+    140093513145160
+    [140093381306144, 16961264, 140093550769720]
+    ['hello', 28, ['Python', 'Java', 'JS']]
+    140093551426088
+    [140093381306144, 16961264, 140093550769720]
+
+```python
+a[0], a[1] = 'world', 30
+a[2].append('R')
+
+print a
+print id(a)
+print [id(x) for x in a]
+
+print b
+print id(b)
+print [id(x) for x in b]
+```
+
+    ['world', 30, ['Python', 'Java', 'JS', 'R']]
+    140093513145160
+    [140093381307776, 16961216, 140093550769720]
+    ['hello', 28, ['Python', 'Java', 'JS', 'R']]
+    140093551426088
+    [140093381306144, 16961264, 140093550769720]
+
+
+### 小结
+
+1. 浅拷贝是在另一块地址中创建一个新的变量或容器，但是容器内的元素的地址均是源对象的元素的**地址的拷贝**。也就是说新的容器中指向了旧的元素（ 新瓶装旧酒 ）；
+2. 使用切片[:]操作，使用工厂函数（如list/dir/set），使用copy模块中的copy()函数都是实现的浅拷贝。
+
+## 深拷贝
+
+```python
+a = ['hello', 28, ['Python', 'Java', 'JS']]
+print a
+print id(a)
+print [id(x) for x in a]
+
+import copy
+
+b = copy.deepcopy(a)
+print b
+print id(b)
+print [id(x) for x in b]
+```
+
+    ['hello', 28, ['Python', 'Java', 'JS']]
+    140093379818416
+    [140093381306144, 16961264, 140093550829864]
+    ['hello', 28, ['Python', 'Java', 'JS']]
+    140093380855136
+    [140093381306144, 16961264, 140093508042408]
+
+### 注意
+
+原来对于深拷贝的设想是：新建一个对象b（有新的地址），这一点和浅拷贝相同，而且对于a中的元素都要重新拷贝一份（有新的地址，而不是对a中元素地址的引用），但是实际上对于不可变对象‘hello’, 28地址并没有变。
+
+**拷贝有一些特殊情况：对于非容器类型（如数字、字符串、和其他Python中的原生类型的）没有拷贝这一说**
+
+```python
+a[0], a[1] = 'world', 30
+a[2].append('R')
+
+print a
+print id(a)
+print [id(x) for x in a]
+
+print b
+print id(b)
+print [id(x) for x in b]
+```
+
+    ['world', 30, ['Python', 'Java', 'JS', 'R']]
+    140093379818416
+    [140093381305088, 16961216, 140093550829864]
+    ['hello', 28, ['Python', 'Java', 'JS']]
+    140093380855136
+    [140093381306144, 16961264, 140093508042408]
+
+
+### 小结
+
+对于**可变对象、不可变对象**要注意区分。
+
+### 对象内都是不可变类型
+
+
+```python
+a = [1, 2, 3]    # a本身是可变对象list
+print id(a)
+print [id(x) for x in a]
+
+# 赋值
+b = a
+print id(b)
+print [id(x) for x in b]
+
+a[0] = 4    # 修改a中的元素
+print [id(x) for x in a]
+print [id(x) for x in b]
+print a
+print b
+```
+
+    140093381192736
+    [16961912, 16961888, 16961864]
+    140093381192736
+    [16961912, 16961888, 16961864]
+    [16961840, 16961888, 16961864]
+    [16961840, 16961888, 16961864]
+    [4, 2, 3]
+    [4, 2, 3]
+
+```python
+a = [1, 2, 3]
+print id(a)
+print [id(x) for x in a]
+
+# 浅拷贝
+b = a[:]
+print id(b)
+print [id(x) for x in b]
+
+a[0] = 4
+print [id(x) for x in a]
+print [id(x) for x in b]
+print a
+print b
+```
+
+    140093380989800
+    [16961912, 16961888, 16961864]
+    140093380854992
+    [16961912, 16961888, 16961864]
+    [16961840, 16961888, 16961864]
+    [16961912, 16961888, 16961864]
+    [4, 2, 3]
+    [1, 2, 3]
+
+```python
+a = [1, 2, 3]
+print id(a)
+print [id(x) for x in a]
+
+# 深拷贝
+import copy
+b = copy.deepcopy(a)
+print id(b)
+print [id(x) for x in b]
+
+a[0] = 4
+print [id(x) for x in a]
+print [id(x) for x in b]
+print a
+print b
+```
+
+    140093551425440
+    [16961912, 16961888, 16961864]
+    140093380989800
+    [16961912, 16961888, 16961864]
+    [16961840, 16961888, 16961864]
+    [16961912, 16961888, 16961864]
+    [4, 2, 3]
+    [1, 2, 3]
+
+
+下面的例子和上面的还不太一样，上面是Python中可变对象的赋值深拷贝浅拷贝，下面是**不可变对象**的赋值：
+
+```python
+a = 'hello'
+print a
+print id(a)
+
+b = a
+print b
+print id(b)
+
+a = 'world'
+
+print a
+print b
+
+print id(a), id(b)
+```
+
+    hello
+    140093381307968
+    hello
+    140093381307968
+    world
+    hello
+    140093381307728 140093381307968
+
+**Python的内存机制**：
+
+建立的每个对象都有一个确定的唯一标识。id(object) = 唯一标识 = 对象的存储位置
+
+## 最后
+
+周末了听首歌...
+
+<center>
+    <br>
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="https://music.163.com/outchain/player?type=2&id=490602750&auto=1&height=66">
+        </iframe>
+    <br>
+</center>
+
+***
+
+本作品采用 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/cn/">知识共享署名 3.0 中国大陆许可协议</a> 进行许可。
