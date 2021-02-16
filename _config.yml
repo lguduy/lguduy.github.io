@@ -1,10 +1,9 @@
 # Site settings
 title: Yu Blog
 SEOTitle: 雨的博客 | Yu Blog
-header-img: img/home-bg/home-bg-03.jpg
-email: 2111502112@zjut.edu.cn
-description: "关于Python 爬虫 机器学习 数据挖掘 一个数据科学小白记录学习和生活的地方。"
-keyword: "梁雨, lguduy, 博客, Python, 爬虫, 机器学习, 数据挖掘, 互联网"
+header-img: img/home-bg/home-bg-05.jpg
+email: yuliang@zjut.edu.cn
+keyword: "博客, Python, 机器视觉, 图像算法, 深度学习, 计算摄影"
 url: "https://lguduy.github.io/"        # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -25,11 +24,9 @@ exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 #anchorjs: true                          # if you want to customize anchor. check out line:181 of `post.html`
 
 
-
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
 gems: [jekyll-paginate]
-
 
 
 # Markdown settings
@@ -50,12 +47,10 @@ ba_track_id: 9cc7b76efd4b490f6cae132cbf618198
 #ga_domain: huangxuan.me
 
 
-
 # Sidebar settings
 sidebar: True                                                # whether or not using Sidebar.
-sidebar-about-description: "记录学习和生活。"
+sidebar-about-description: "记录学习和生活"
 sidebar-avatar: /img/Sidebar-photo/Sidebar-photo-04.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
-
 
 
 # Featured Tags
@@ -76,8 +71,5 @@ friends: [
     },{
         title: "我爱机器学习",
         href: "https://www.52ml.net/"
-    },{
-        title: "DataCastle",
-        href: "http://www.pkbigdata.com/"
     }
 ]
