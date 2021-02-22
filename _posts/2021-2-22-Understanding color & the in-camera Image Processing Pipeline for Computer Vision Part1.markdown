@@ -9,42 +9,40 @@ tags:
     - ISP
 ---
 
-
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
 <!-- code_chunk_output -->
 
-  - [前言](#前言)
-  - [Part1 (General)](#part1-general)
-    - [Motivation](#motivation)
-    - [Review of color & color spaces](#review-of-color-color-spaces)
-      - [什么是Color](#什么是color)
-      - [色彩的生理基础和SPD](#色彩的生理基础和spd)
-        - [Spectral Power Distribution](#spectral-power-distribution)
-      - [格拉斯曼定律](#格拉斯曼定律)
-      - [活体实验来量化色彩](#活体实验来量化色彩)
-        - [闪烁混合测试](#闪烁混合测试)
-        - [色彩匹配实验](#色彩匹配实验)
-        - [CIE RGB、CIE XYZ、CIE xyY色彩空间](#cie-rgb-cie-xyz-cie-xyy色彩空间)
-        - [如何量化色彩？](#如何量化色彩)
-      - [色彩、白平衡和色温](#色彩-白平衡和色温)
-        - [色温](#色温)
-        - [白平衡](#白平衡)
-      - [sRGB与其他色彩空间](#srgb与其他色彩空间)
-        - [linear-sRGB](#linear-srgb)
-        - [sRGB](#srgb)
-        - [其他色彩空间](#其他色彩空间)
-          - [CIE LAB](#cie-lab)
-          - [Y’UV、Y’IQ、Y’CrCb](#yuv-yiq-ycrcb)
-      - [色差](#色差)
-- [后记](#后记)
-  - [参考资料](#参考资料)
+- [前言](#前言)
+- [Part1 (General)](#part1-general)
+  - [Motivation](#motivation)
+  - [Review of color & color spaces](#review-of-color-color-spaces)
+    - [什么是Color](#什么是color)
+    - [色彩的生理基础和SPD](#色彩的生理基础和spd)
+      - [Spectral Power Distribution](#spectral-power-distribution)
+    - [格拉斯曼定律](#格拉斯曼定律)
+    - [活体实验来量化色彩](#活体实验来量化色彩)
+      - [闪烁混合测试](#闪烁混合测试)
+      - [色彩匹配实验](#色彩匹配实验)
+      - [CIE RGB、CIE XYZ、CIE xyY色彩空间](#cie-rgb-cie-xyz-cie-xyy色彩空间)
+      - [如何量化色彩？](#如何量化色彩)
+    - [色彩、白平衡和色温](#色彩-白平衡和色温)
+      - [色温](#色温)
+      - [白平衡](#白平衡)
+    - [sRGB与其他色彩空间](#srgb与其他色彩空间)
+      - [linear-sRGB](#linear-srgb)
+      - [sRGB](#srgb)
+      - [其他色彩空间](#其他色彩空间)
+        - [CIE LAB](#cie-lab)
+        - [Y’UV、Y’IQ、Y’CrCb](#yuv-yiq-ycrcb)
+    - [色差](#色差)
+- [参考资料](#参考资料)
 
 <!-- /code_chunk_output -->
 
 ## 前言
 
-Understanding color & the in-camera Image Processing Pipeline for Computer Vision 是Brown在ICCV2019上的一个tutorial，是一份很好的Computational photography的入门材料。本文为Part1，主要是color和color space。
+Understanding color & the in-camera Image Processing Pipeline for Computer Vision 是Brown在ICCV2019上的一个tutorial，是很好的Computational photography的入门材料。本文为Part1，主要是color和color space的相关内容。
 
 ## Part1 (General)
 
@@ -262,14 +260,6 @@ SPD表示不同波长的光对应的强度，记作I(λ)；不同波长的光需
 * 基于CIE LAB空间定义了色差
 
 <img src="/img/post-bg/image-20210121233358559.png" alt="image-20210121233358559" style="zoom: 50%;" />
-
-***
-
-# 后记
-
-希望读完本文对你有所帮助。
-
-由于本人水平有限，文中难免有疏漏之处，还请大家批评指正。
 
 ## 参考资料
 
