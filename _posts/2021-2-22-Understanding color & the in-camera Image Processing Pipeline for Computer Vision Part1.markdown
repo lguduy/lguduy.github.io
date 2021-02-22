@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Understanding color & the in-camera Image Processing Pipeline for Computer Vision"
+title:      "Understanding color & the in-camera Image Processing Pipeline for Computer Vision Part1"
 date:       2021-2-22 23:30:00
 author:     "liangyu"
 header-img: "img/img-24cdd125021c794a0dfcc76aed9a3dad.jpg"
