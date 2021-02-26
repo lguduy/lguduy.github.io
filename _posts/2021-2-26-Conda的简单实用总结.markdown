@@ -1,0 +1,120 @@
+---
+layout:     post
+title:      "Conda的简单使用总结"
+date:       2021-2-26 22:16:00
+author:     "liangyu"
+header-img: "img/img-a1f129b2ed415f26dc3b6701f1d56b86.jpg"
+tags:
+	- 笔记
+	- Python
+---
+
+
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
+<!-- code_chunk_output -->
+
+- [前言](#前言)
+- [基本概念](#基本概念)
+- [国内镜像设置](#国内镜像设置)
+- [常用命令总结](#常用命令总结)
+  - [环境管理](#环境管理)
+  - [库管理](#库管理)
+- [参考资料](#参考资料)
+- [后记](#后记)
+
+<!-- /code_chunk_output -->
+
+
+## 前言
+工作和生活中经常用到Conda，但老年人总记不住这几个命令。在前公司记的很多OneNote笔记由于信息安全的原因也带不出来，统一在这里记录下方便用到的时候查看。
+
+## 基本概念
+Conda是Python的库和虚拟环境管理的工具，我日常用的比较多。觉得Anaconda臃肿的同学可以试试**miniconda**，可以在这里下载: https://mirrors.tuna.tsinghua.edu.cn/anaconda/miniconda/
+
+* 注意：以下命令都在windows平台下
+
+## 国内镜像设置
+安装完conda的第一件事就是换成国内源，官方源太慢了。截止到目前这篇文章的时间(2021-2-26)，清华源还是可以用的，换成清华源。
+
+```
+conda config --show channels       # 查看源地址
+# 添加清华源
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main/
+
+conda config --set show_channel_urls yes
+
+conda config --remove-key channels # 恢复默认
+```
+
+## 常用命令总结
+下面列出我开发时常用的几个命令
+
+### 环境管理
+
+**查看当前所有的虚拟环境**
+```
+conda info -e  # 查看当前所有的虚拟环境
+conda info     # 查看conda的一些信息
+```
+
+**新建虚拟环境**
+```
+conda create --name evn_name python=3.8  # 指定环境名，指定Python版本建立虚拟环境
+```
+
+**激活虚拟环境**
+```
+conda activate evn_name
+```
+
+**返回主环境**
+```
+conda deactivate  # 退出当前环境返回主环境
+```
+
+**删除环境**
+```
+conda remove --name evn_name --all
+```
+
+### 库管理
+**查看已安装库**
+```
+conda list              # 查看当前环境已安装库
+conda list -n evn_name  # 查看某个指定环境的已安装包
+```
+
+**安装库**
+```
+conda install numpy  # 安装库，默认安装到当前激活环境
+conda install -n evn_name numpy  # 指定环境安装
+```
+
+**更新库**
+```
+conda update numpy
+```
+
+**删除package**
+```
+conda remove numpy
+```
+
+**更新conda**
+```
+conda update conda
+```
+
+## 参考资料
+1. https://mirrors.tuna.tsinghua.edu.cn/
+2. https://zhuanlan.zhihu.com/p/105882504
+3. https://zhuanlan.zhihu.com/p/44398592
+
+## 后记
+特别鸣谢 [清华大学开源软件镜像站](https://mirrors.tuna.tsinghua.edu.cn/)
+
+***
+
+本作品采用 <a rel="license" href="http://creativecommons.org/licenses/by/3.0/cn/">知识共享署名 3.0 中国大陆许可协议</a> 进行许可。
